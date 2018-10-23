@@ -1,0 +1,22 @@
+
+Regex expression for email allows the following formats:
+
+1.  prettyandsimple@example.com
+2.  very.common@example.com
+3.  disposable.style.email.with+symbol@example.com
+4.  other.email-with-dash@example.com
+9.  #!$%&'*+-/=?^_`{}|~@example.org
+6.  "()[]:,;@\\\"!#$%&'*+-/=?^_`{}| ~.a"@example.org
+7.  " "@example.org (space between the quotes)
+8.  üñîçøðé@example.com (Unicode characters in local part)
+9.  üñîçøðé@üñîçøðé.com (Unicode characters in domain part)
+10. Pelé@example.com (Latin)
+11. δοκιμή@παράδειγμα.δοκιμή (Greek)
+12. 我買@屋企.香港 (Chinese)
+13. 甲斐@黒川.日本 (Japanese)
+14. чебурашка@ящик-с-апельсинами.рф (Cyrillic)
+
+It's clearly versatile and allows the all-important international characters, 
+while still enforcing the basic anything@anything.anything format. 
+It will block spaces which are technically allowed by RFC, but they are so rare 
+that I'm happy to do this.
