@@ -29,7 +29,7 @@ Purpose:    Javascript Form Validation
             <!-- Need to add new function to onClick to trigger both validation functions -->
             <!-- For some reason when I do so, neither function validates and page goes straight to thankyou.html --> 
             <!-- May be due to me changing the button from submit to button??? Review with Greg -->
-            <button type="submit" value="submit this" onclick="valForm(this.form)">Submit</button>
+            <button type="submit" value="submit this" onclick="return valForm(this.form)">Submit</button>
         </div>
     </form>
 

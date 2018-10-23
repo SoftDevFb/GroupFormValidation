@@ -13,7 +13,7 @@ function nameValid(frm) {
         frm.name.style.backgroundColor = "red";
         document.getElementById("error").style.display = "block";
     }
-    return isValid;
+   // return isValid;
 }
 
 //Checks Email Validity
@@ -25,7 +25,7 @@ function emailValid(frm){
         frm.email.style.backgroundColor = "red";
         document.getElementById("error").style.display = "block";
     }
-    return isValid;
+    //return isValid;
 }
 
 
@@ -43,7 +43,7 @@ function validate(frm){
 
     }
     
-return isValid;
+//return isValid;
 }
 
 //Runs all of our functions in one onClick
@@ -51,6 +51,6 @@ function valForm(frm){
   nameValid(frm);
   emailValid(frm); 
   validate(frm); 
-   
+  return isValid; 
     
 }
