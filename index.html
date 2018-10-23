@@ -15,25 +15,26 @@ Purpose:    Javascript Form Validation
 </head>
 
 <body>
-    <form action="thankyou.html">
+    <form action="">
         <div class="container>
             <label for="name"><b>Name</b></label>
-            <input type="text" name="name" id="name"></br></br>
+            <input type="text" name="name" id="name" placeholder="Full Name - 6 Character Minimum"></br></br>
 
             <label for="email"><b>Email</b></label>
-            <input type="text" name="email" id="email"></br></br>
+            <input type="text" name="email" id="email" placeholder="youraddress@example.com"></br></br>
 
             <label for="phoneNumber"><b>Phone</b></label>
-            <input type="text" name="phoneNumber" id="phone"></br></br>
+            <input type="text" name="phoneNumber" id="phone" placeholder="Need Required Format Details"></br></br>
 
             <!-- Need to add new function to onClick to trigger both validation functions -->
             <!-- For some reason when I do so, neither function validates and page goes straight to thankyou.html --> 
-            <button type="submit" value="submit this" onclick="return valForm(this.form)">Submit</button>
+            <!-- May be due to me changing the button from submit to button??? Review with Greg -->
+            <button type="submit" value="submit this" onclick="valForm(this.form)">Submit</button>
         </div>
     </form>
 
     <div id="error" style="display: none;">
-        <h1>Please fill in the correct info and resbumit</h1>
+        <h1>Please fill in the required info and resubmit form</h1>
     </div>
     <script src="verify.js"></script>
 </body>
