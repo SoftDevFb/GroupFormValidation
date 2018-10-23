@@ -1,2 +1,2 @@
 # GroupFormValidation
-##Gregory Pugh and Frankie Barrios
+Gregory Pugh and Frankie Barrios
