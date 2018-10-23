@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+Developers: Greg Pugh and Frankie Barrios
+Date:       10/23/18
+Purpose:    Javascript Form Validation
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +13,29 @@
     <link rel="stylesheet" href="style.css">
     <title>ValidForm</title>
 </head>
+
 <body>
+    <form action="thankyou.html">
+        <div class="container>
+            <label for="name"><b>Name</b></label>
+            <input type="text" name="name" id="name"></br></br>
 
-<form action="">
+            <label for="email"><b>Email</b></label>
+            <input type="text" name="email" id="email"></br></br>
 
-<input type="text" name="phoneNumber" id="phone">
+            <label for="phoneNumber"><b>Phone</b></label>
+            <input type="text" name="phoneNumber" id="phone"></br></br>
 
-<input type="submit" value="submit this" onclick="return validate(this.form)">
+            <!-- Need to add new function to onClick to trigger both validation functions -->
+            <!-- For some reason when I do so, neither function validates and page goes straight to thankyou.html --> 
+            <button type="submit" value="submit this" onclick="return valForm(this.form)">Submit</button>
+        </div>
+    </form>
 
-
-</form>
-<div id="error"></div>    
-<script src="verify.js"></script>
+    <div id="error" style="display: none;">
+        <h1>Please fill in the correct info and resbumit</h1>
+    </div>
+    <script src="verify.js"></script>
 </body>
+
 </html>
