@@ -9,23 +9,18 @@ var isValid = true;
 
 //Checks Name Validity
 function nameValid(frm) {
-    var name1 = /[0 -9_. + -]/;
-    if (name1.test(frm.name.value) || frm.name.value == "") {
+    var name = /[0 -9_. + -]/;
+    if (name.test(frm.name.value) || frm.name.value == "") {
         isValid = false;
         frm.name.style.backgroundColor = "red";
-        document.getElementById("error").style.display = "block";
+     //   document.getElementById("error").style.display = "block";
    }
-    return isValid;
+   // return isValid;
 }
 
 //Checks Email Validity
-<<<<<<< HEAD
-function emailValid(frm){
-    var email = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-=======
 function emailValid(frm) {
     var email = /[a - zA - Z0 -9_. + -] @[a - zA - Z0 - 9 -]\.[a - zA - Z0 - 9 -.]/;
->>>>>>> 03d0223e1c2fc6c15600902248dc887908d62122
 
     if (email.test(frm.email.value) || frm.email.value == "") {
         isValid = false;
@@ -35,14 +30,6 @@ function emailValid(frm) {
     //return isValid;
 }
 
-<<<<<<< HEAD
-
-function validate(frm){
-    var phone = /^\(?([2-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if(frm.phoneNumber.value != phone){
-    isValid = false;
-    frm.phoneNumber.style.backgroundColor="red";
-=======
 function radioValidation(frm) {
  if(frm.gender[0].checked == false && frm.gender[1].checked == false && frm.gender[2].checked == false){
     isValid = false;
@@ -65,7 +52,6 @@ function radioValidation(frm) {
         if (phone.test(frm.phoneNumber.value) || frm.phoneNumber.value == "") {
             isValid = false;
             frm.phoneNumber.style.backgroundColor = "red";
->>>>>>> 03d0223e1c2fc6c15600902248dc887908d62122
 
         }
 
