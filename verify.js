@@ -9,7 +9,7 @@ var isValid = true;
 
 //Checks Name Validity
 function nameValid(frm) {
-    var name = /[a-z A-Z]/;
+    var name = /[0 -9_. + -]/;
     if (name.test(frm.name.value) || frm.name.value == "") {
         isValid = false;
         frm.name.style.backgroundColor = "red";
