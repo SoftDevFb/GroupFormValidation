@@ -9,7 +9,8 @@ var isValid = true;
 
 //Checks Name Validity
 function nameValid(frm) {
-    if (frm.name.value == "" || frm.name.value < 6) {
+    var name = /[a-z A-Z]/;
+    if (name.test(frm.name.value) || frm.name.value == "") {
         isValid = false;
         frm.name.style.backgroundColor = "red";
         //document.getElementById("error").style.display = "block";
