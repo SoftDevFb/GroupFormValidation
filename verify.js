@@ -9,7 +9,8 @@ var isValid = true;
 
 //Checks Name Validity
 function nameValid(frm) {
-    if (frm.name.value == "" || frm.name.value < 6) {
+    var name = /[a-z A-Z]/;
+    if (name.test(frm.name.value) || frm.name.value == "") {
         isValid = false;
         frm.name.style.backgroundColor = "red";
         //document.getElementById("error").style.display = "block";
@@ -19,9 +20,15 @@ function nameValid(frm) {
 
 //Checks Email Validity
 function emailValid(frm){
+<<<<<<< HEAD
     var email = /[a - zA - Z0 -9_. + -]@[a - zA - Z0 - 9 -]\.[a - zA - Z0 - 9 -.]/ ;
 
     if (email.test(frm.email.value)|| frm.email.value == "") {
+=======
+    var email = /[a - zA - Z0 -9_. + -] @[a - zA - Z0 - 9 -]\.[a - zA - Z0 - 9 -.]/ ;
+
+    if (email.test(frm.email.value) || frm.email.value == ""){
+>>>>>>> dae52f9694eb9485ed5abe62924c7ff78b8b2422
       isValid = false;
       frm.email.style.backgroundColor = "red";
      // document.getElementById("error").style.display = "block";
