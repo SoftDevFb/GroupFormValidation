@@ -19,9 +19,9 @@ function nameValid(frm) {
 
 //Checks Email Validity
 function emailValid(frm){
-    var email = /[a - zA - Z0 -9_. + -] +@[a - zA - Z0 - 9 -]+\.[a - zA - Z0 - 9 -.]/ ;
+    var email = /[a - zA - Z0 -9_. + -] @[a - zA - Z0 - 9 -]\.[a - zA - Z0 - 9 -.]/ ;
 
-    if (email.test(frm.email.value) == "" || email.test(frm.email.value)) {
+    if (email.test(frm.email.value) || frm.email.value == ""){
       isValid = false;
       frm.email.style.backgroundColor = "red";
       document.getElementById("error").style.display = "block";
