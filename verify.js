@@ -11,46 +11,49 @@ function nameValid(frm) {
     if (frm.name.value == "" || frm.name.value < 6) {
         isValid = false;
         frm.name.style.backgroundColor = "red";
-        document.getElementById("error").style.display = "block";
+        //document.getElementById("error").style.display = "block";
     }
-   // return isValid;
+    // return isValid;
 }
 
 //Checks Email Validity
-function emailValid(frm){
-    var email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function emailValid(frm) {
+    var email = /[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (frm.email.value == "" || frm.email.value != email) {
         isValid = false;
         frm.email.style.backgroundColor = "red";
-        document.getElementById("error").style.display = "block";
+        // document.getElementById("error").style.display = "block";
     }
     //return isValid;
 }
 
 
-function validate(frm){
-    var phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if(frm.phoneNumber.value == ""){
-    isValid = false;
-    frm.phoneNumber.style.borderColor = "red";
-    
-    }
+function validate(frm) {
+    var phone = /d{3}[-|.| ]\d{3}[-|.| ]\d{4}/;
 
-    if(frm.phoneNumber.value != phone){
-    isValid = false;
-    frm.phoneNumber.style.borderColor="blue"
+    if (phone.test(frm.phoneNumber.value)) {
+        isValid = false;
+        frm.phoneNumber.style.backgroundColor = "red";
 
     }
-    
-//return isValid;
+
+    //return isValid;
 }
 
 //Runs all of our functions in one onClick
-function valForm(frm){
-  nameValid(frm);
-  emailValid(frm); 
-  validate(frm); 
-  return isValid; 
-    
+function valForm(frm) {
+    nameValid(frm);
+    emailValid(frm);
+    validate(frm);
+    if (isValid == false) {
+        document.getElementById("error").style.display = "block";
+    }
+    else if (isValid == true) {
+        document.getElementById("error").style.display = "none";
+    }
+   return isValid;  
 }
+
+
+    
