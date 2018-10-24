@@ -26,6 +26,17 @@ Purpose:    Javascript Form Validation
             <label for="phoneNumber"><b>Phone</b></label>
             <input type="text" name="phoneNumber" id="phone" placeholder="Need Required Format Details"></br></br>
             
+            <input type="radio" name="gender" value="male"> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Other
+        </br></br>
+            <select name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+
             <button type="submit" value="submit this" onclick="return valForm(this.form)">Submit</button>
         </div>
     </form>

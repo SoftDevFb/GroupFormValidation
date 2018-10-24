@@ -30,6 +30,13 @@ function emailValid(frm){
     //return isValid;
 }
 
+function radioValidation(){
+    
+}
+
+function selectValidate(){
+
+}
 
 function validate(frm) {
     var phone = /d{3}[-|.| ]\d{3}[-|.| ]\d{4}/;
