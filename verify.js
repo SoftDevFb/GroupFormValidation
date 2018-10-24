@@ -18,7 +18,7 @@ function nameValid(frm) {
 
 //Checks Email Validity
 function emailValid(frm){
-    var email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var email = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 
     if (frm.email.value == "" || frm.email.value != email) {
         isValid = false;
@@ -30,16 +30,10 @@ function emailValid(frm){
 
 
 function validate(frm){
-    var phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if(frm.phoneNumber.value == ""){
-    isValid = false;
-    frm.phoneNumber.style.borderColor = "red";
-    
-    }
-
+    var phone = /^\(?([2-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if(frm.phoneNumber.value != phone){
     isValid = false;
-    frm.phoneNumber.style.borderColor="blue"
+    frm.phoneNumber.style.backgroundColor="red";
 
     }
     
