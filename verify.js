@@ -3,6 +3,7 @@ Developers: Greg Pugh and Frankie Barrios
 Date:       10/23/18
 Purpose:    Javascript Form Validation
 */
+
 //Made global due to all of our functions utilizing this var
 var isValid = true;
 
@@ -18,12 +19,12 @@ function nameValid(frm) {
 
 //Checks Email Validity
 function emailValid(frm){
-    var email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var email = /[a - zA - Z0 -9_. + -] +@[a - zA - Z0 - 9 -]+\.[a - zA - Z0 - 9 -.]/ ;
 
-    if (frm.email.value == "" || frm.email.value != email) {
-        isValid = false;
-        frm.email.style.backgroundColor = "red";
-        document.getElementById("error").style.display = "block";
+    if (email.test(frm.email.value) == "" || email.test(frm.email.value)) {
+      isValid = false;
+      frm.email.style.backgroundColor = "red";
+      document.getElementById("error").style.display = "block";
     }
     //return isValid;
 }
@@ -51,6 +52,9 @@ function valForm(frm){
   nameValid(frm);
   emailValid(frm); 
   validate(frm); 
-  return isValid; 
-    
+  return isValid;    
 }
+
+var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+regex.test(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+console.log(regex);
