@@ -11,10 +11,28 @@ Purpose:    Javascript Form Validation
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thank You</title>
+    <script>
+        function showData() {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                document.write(pair[0] + ": " + pair[1] + "<br />");
+            }
+        }
+    </script>
 </head>
 
 <body>
     <h1>Thank You!!!</h1>
+    <div style="margin-top:70px">
+        <h2>Thank you for entering valid data! Have a great day!!!</h2>
+
+        <script>
+            showData();
+        </script>
+        </div>
 </body>
 
 </html>
