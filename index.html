@@ -16,20 +16,19 @@ Purpose:    Javascript Form Validation
 
 <body>
 <form action="thankyou.html" method="get">
-        <div class="container">
             <label for="name"><b>Name</b></label>
-            <input type="text" name="Name" id="name" placeholder="Full Name - 6 Character Minimum"><br><br>
+            <input type="text" name="name" id="name" placeholder="Full Name - 6 Character Minimum"><br><br>
 
             <label for="email"><b>Email</b></label>
-            <input type="text" name="Email" id="email" placeholder="youraddress@example.com"><br><br>
+            <input type="text" name="email" id="email" placeholder="youraddress@example.com"><br><br>
 
             <label for="phoneNumber"><b>Phone</b></label>
-            <input type="text" name="Phone" id="phone" placeholder="555-5555"></br></br>
-            <input type="radio" name="Gender" value="Male" id="male"> Male<br>
-            <input type="radio" name="Gender" value="Female" id="female"> Female<br>
-            <input type="radio" name="Gender" value="Other" id="other"> Other
+            <input type="text" name="phoneNumber" id="phone" placeholder="555-5555"></br></br>
+            <input type="radio" name="gender" value="Male" id="male"> Male<br>
+            <input type="radio" name="gender" value="Female" id="female"> Female<br>
+            <input type="radio" name="gender" value="Other" id="other"> Other
         </br></br>
-            <select name="Car">
+            <select name="cars">
                 <option value="" selected = "selected"></option>
                 <option value="Volvo">Volvo</option>
                 <option value="Saab">Saab</option>
@@ -37,8 +36,7 @@ Purpose:    Javascript Form Validation
                 <option value="Audi">Audi</option>
             </select>
 
-            <button type="submit" value="submit this" onclick="return valForm(this.form)">Submit</button>
-        </div>
+            <button type="submit" value="submit this" onclick=" return valForm(this.form)">Submit</button>
     </form>
 
     <div id="error" style="display: none;">

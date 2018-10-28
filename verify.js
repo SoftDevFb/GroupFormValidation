@@ -15,6 +15,7 @@ function nameValid(frm) {
         frm.name.style.backgroundColor = "red";
     } else {
         frm.name.style.backgroundColor = "white";
+        isValid = true;
     }
 }
 
@@ -28,6 +29,7 @@ function emailValid(frm) {
         // document.getElementById("error").style.display = "block";
     } else {
         frm.email.style.backgroundColor = "white";
+        isValid = true;
     }
     //return isValid;
 }
@@ -42,6 +44,7 @@ function radioValidation(frm) {
         for (i = 0; i < 3; i++) {
             frm.gender[i].style.outline = "none";
         }
+        isValid = true;
     }
 }
 
@@ -49,7 +52,11 @@ function selectValidate(frm) {
     if (frm.cars.selectedIndex == 0) {
         frm.cars.style.border = "1px solid red";
         isValid = false;
-    } else frm.cars.style.border = "none"
+    } else {
+        frm.cars.style.border = "none";
+        isValid = true;
+    }
+
 
 }
 
@@ -61,6 +68,7 @@ function validate(frm) {
         frm.phoneNumber.style.backgroundColor = "red";
     } else {
         frm.phoneNumber.style.backgroundColor = "white";
+        isValid = true;
     }
 
     //return isValid;
@@ -75,7 +83,7 @@ function valForm(frm) {
     radioValidation(frm);
     selectValidate(frm);
     if (isValid == false) {
-        document.getElementById("error").style.display = "block";        
+        document.getElementById("error").style.display = "block";
     }
 
     return isValid;
