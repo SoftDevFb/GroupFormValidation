@@ -9,16 +9,13 @@ var isValid = true;
 
 //Checks Name Validity
 function nameValid(frm) {
-    var name = /[0 -9_. + -]/;
-    if (name.test(frm.name.value) || frm.name.value == "" || frm.name.value < 6) {
+    var name = /[0 -9_. + -] + [0 -9_. + -]/;
+    if (name.test(frm.name.value) || frm.name.value == "" || frm.name.value.length < 6) {
         isValid = false;
         frm.name.style.backgroundColor = "red";
-     //   document.getElementById("error").style.display = "block";
-   }
-   else{
-       frm.name.style.backgroundColor = "none";
-   }
-   // return isValid;
+    } else {
+        frm.name.style.backgroundColor = "white";
+    }
 }
 
 //Checks Email Validity
@@ -29,60 +26,57 @@ function emailValid(frm) {
         isValid = false;
         frm.email.style.backgroundColor = "red";
         // document.getElementById("error").style.display = "block";
-    }
-    else{
-        frm.email.style.backgroundColor="none";
+    } else {
+        frm.email.style.backgroundColor = "white";
     }
     //return isValid;
 }
 
 function radioValidation(frm) {
- if(!frm.gender[0].checked && !frm.gender[1].checked && !frm.gender[2].checked){
-    isValid = false;
-    for(i=0; i < 3; i++){
-        frm.gender[i].style.outline = "1px solid red";
+    if (!frm.gender[0].checked && !frm.gender[1].checked && !frm.gender[2].checked) {
+        isValid = false;
+        for (i = 0; i < 3; i++) {
+            frm.gender[i].style.outline = "1px solid red";
+        }
+    } else {
+        for (i = 0; i < 3; i++) {
+            frm.gender[i].style.outline = "none";
+        }
     }
-  }
-  else{
-      for(i=0; i<3;i++){
-          frm.gender[i].style.outline="none";
-      }
-  }
 }
 
-    function selectValidate(frm) {
-        if (frm.cars.selectedIndex == 0) {
-            frm.cars.style.border = "1px solid red";
-            isValid = false;
-        }
-        else frm.cars.style.border = "none"
+function selectValidate(frm) {
+    if (frm.cars.selectedIndex == 0) {
+        frm.cars.style.border = "1px solid red";
+        isValid = false;
+    } else frm.cars.style.border = "none"
 
+}
+
+function validate(frm) {
+    var phone = /d{3}[-|.| ]\d{3}[-|.| ]\d{4}/;
+
+    if (phone.test(frm.phoneNumber.value) || frm.phoneNumber.value == "") {
+        isValid = false;
+        frm.phoneNumber.style.backgroundColor = "red";
+    } else {
+        frm.phoneNumber.style.backgroundColor = "white";
     }
 
-    function validate(frm) {
-        var phone = /d{3}[-|.| ]\d{3}[-|.| ]\d{4}/;
+    //return isValid;
+}
 
-        if (phone.test(frm.phoneNumber.value) || frm.phoneNumber.value == "") {
-            isValid = false;
-            frm.phoneNumber.style.backgroundColor = "red";
-        }
-        else{
-          frm.phoneNumber.style.backgroundColor ="none";  
-        } 
+//Runs all of our functions in one onClick
+function valForm(frm) {
 
-        //return isValid;
+    nameValid(frm);
+    emailValid(frm);
+    validate(frm);
+    radioValidation(frm);
+    selectValidate(frm);
+    if (isValid == false) {
+        document.getElementById("error").style.display = "block";        
     }
 
-    //Runs all of our functions in one onClick
-    function valForm(frm) {
-        
-        nameValid(frm);
-        emailValid(frm);
-        validate(frm);
-        radioValidation(frm);
-        selectValidate(frm);
-        if (isValid == false) {
-            document.getElementById("error").style.display = "block";
-        }
-        return isValid;
-    }
+    return isValid;
+}
