@@ -10,10 +10,13 @@ var isValid = true;
 //Checks Name Validity
 function nameValid(frm) {
     var name = /[0 -9_. + -]/;
-    if (name.test(frm.name.value) || frm.name.value == "") {
+    if (name.test(frm.name.value) || frm.name.value == "" || frm.name.value < 6) {
         isValid = false;
         frm.name.style.backgroundColor = "red";
      //   document.getElementById("error").style.display = "block";
+   }
+   else{
+       frm.name.style.backgroundColor = "none";
    }
    // return isValid;
 }
@@ -27,22 +30,32 @@ function emailValid(frm) {
         frm.email.style.backgroundColor = "red";
         // document.getElementById("error").style.display = "block";
     }
+    else{
+        frm.email.style.backgroundColor="none";
+    }
     //return isValid;
 }
 
 function radioValidation(frm) {
- if(frm.gender[0].checked == false && frm.gender[1].checked == false && frm.gender[2].checked == false){
+ if(!frm.gender[0].checked && !frm.gender[1].checked && !frm.gender[2].checked){
     isValid = false;
-    male.style.backgroundColor = "red";
-    female.style.backgroundColor ="red";
-    other.style.backgroundColor="red";
+    for(i=0; i < 3; i++){
+        frm.gender[i].style.outline = "1px solid red";
+    }
+  }
+  else{
+      for(i=0; i<3;i++){
+          frm.gender[i].style.outline="none";
+      }
   }
 }
 
     function selectValidate(frm) {
-        if (frm.cars[0].selected) {
-
+        if (frm.cars.selectedIndex == 0) {
+            frm.cars.style.border = "1px solid red";
+            isValid = false;
         }
+        else frm.cars.style.border = "none"
 
     }
 
@@ -52,18 +65,22 @@ function radioValidation(frm) {
         if (phone.test(frm.phoneNumber.value) || frm.phoneNumber.value == "") {
             isValid = false;
             frm.phoneNumber.style.backgroundColor = "red";
-
         }
+        else{
+          frm.phoneNumber.style.backgroundColor ="none";  
+        } 
 
         //return isValid;
     }
 
     //Runs all of our functions in one onClick
     function valForm(frm) {
+        
         nameValid(frm);
         emailValid(frm);
         validate(frm);
         radioValidation(frm);
+        selectValidate(frm);
         if (isValid == false) {
             document.getElementById("error").style.display = "block";
         }
